@@ -1,0 +1,23 @@
+from flask import Flask, render_template, request, jsonify
+import json
+
+app = Flask(__name__)
+
+# Load medicine data from JSON file
+def load_medicine_data():
+    with open('data/medicines.json') as f:
+        return json.load(f)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/recommend', methods=['POST'])
+def recommend():
+    condition = request.form['condition']
+    medicines = load_medicine_data()
+    recommendations = [med for med in medicines if med['condition'].lower() == condition.lower()]
+    return jsonify(recommendations)
+
+if __name__ == '__main__':
+    app.run(debug=True)

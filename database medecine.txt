@@ -1,0 +1,10 @@
+# Define some medicines based on symptoms or conditions
+medicine_database = {
+    'cold': ['Paracetamol', 'Antihistamine', 'Decongestant'],
+    'fever': ['Ibuprofen', 'Paracetamol', 'Aspirin'],
+    'headache': ['Paracetamol', 'Ibuprofen'],
+    'allergy': ['Cetirizine', 'Loratadine', 'Fexofenadine'],
+    'stomach ache': ['Omeprazole', 'Antacid', 'Pepto-Bismol'],
+    'cough': ['Dextromethorphan', 'Codeine', 'Guaifenesin']
+}
+
